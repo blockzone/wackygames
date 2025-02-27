@@ -27,30 +27,30 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             cursor: pointer;
+            overflow: hidden;
+        }
+        .image-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1);
         }
         .image-container img {
             width: 90%;
             height: 90%;
             border-radius: 20px;
-            transition: transform 0.3s ease-in-out;
+            position: absolute;
+            transition: opacity 0.5s ease-in-out;
         }
-        .image-container:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Glowing effect expands */
+        .image-container .gif {
+            opacity: 0;
         }
-        .image-container:hover img {
-            transform: scale(1.1);
+        .image-container:hover .gif {
+            opacity: 1;
+        }
+        .image-container:hover .static {
+            opacity: 0;
         }
     </style>
     <script>
-        function changeToGif(element) {
-            element.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXgwdHN3aXN6YWkydzFqMTZkdm44c3AwY2YzYjVrdHZqbmM4bnBpdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Z9GFEymgAjgdC/giphy.gif"; // Replace with actual GIF URL
-        }
-        
-        function changeToImage(element) {
-            element.src = "https://play-lh.googleusercontent.com/3KozeTKuK0uSmMCtU2CwbxNuEadSbVrq9U1whz_74fc33YIvaOwU8trkDooN6JM4ci4=w240-h480-rw"; // Original static image
-        }
-        
         function openNewTab() {
             window.open("https://your-custom-url.com", "_blank"); // Replace with your desired URL
         }
@@ -58,10 +58,8 @@
 </head>
 <body>
     <div class="image-container" onclick="openNewTab()">
-        <img src="https://play-lh.googleusercontent.com/3KozeTKuK0uSmMCtU2CwbxNuEadSbVrq9U1whz_74fc33YIvaOwU8trkDooN6JM4ci4=w240-h480-rw" 
-             alt="Custom Image" 
-             onmouseover="changeToGif(this)" 
-             onmouseout="changeToImage(this)">
+        <img class="static" src="https://play-lh.googleusercontent.com/3KozeTKuK0uSmMCtU2CwbxNuEadSbVrq9U1whz_74fc33YIvaOwU8trkDooN6JM4ci4=w240-h480-rw" alt="Static Image">
+        <img class="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXgwdHN3aXN6YWkydzFqMTZkdm44c3AwY2YzYjVrdHZqbmM4bnBpdyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Z9GFEymgAjgdC/giphy.gif" alt="GIF">
     </div>
 </body>
 </html>
