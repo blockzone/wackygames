@@ -24,6 +24,11 @@
             flex-direction: column;
             position: relative;
         }
+
+        html, body {
+    overflow: hidden;
+}
+
         header {
             width: 100%;
             height: 60px;
@@ -35,16 +40,18 @@
             top: 0;
             left: 0;
         }
-        .logo {
-            height: 80px; /* Increased size */
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-            margin-left: 0px; /* Moves logo slightly to the left */
-            margin-top: 10px; /* Moves logo slightly down */
-        }
-        .logo:hover {
-            transform: scale(1.1);
-        }
+
+.logo {
+    height: 80px; /* Increased size */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-right: 120px; /* Pushes the logo to the right */
+    margin-top: 10px; /* Moves logo slightly down */
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+
 
         /* Create a container for the particles */
         #particles-js {
