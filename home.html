@@ -144,6 +144,44 @@
             height: 100%;
         }
 
+/* Rating Badge (Initially Hidden) */
+.rating {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents interaction */
+}
+
+/* Star Emoji */
+.rating .star {
+    color: gold;
+    font-size: 18px;
+}
+
+/* Show rating on hover */
+.rectangle:hover .rating {
+    opacity: 1;
+}
+
+/* Prevent rating from zooming */
+.rating:hover {
+    transform: none;
+}
+
+
+
 /* Fire Emoji Container */
 .fire-emoji-container {
     position: absolute;
@@ -215,35 +253,55 @@
         </a>
     </header>
 
-    <!-- Game Icons (Rounded Rectangles) -->
-    <div class="rectangle-container">
-<div class="rectangle" onclick="window.location.href='/g/minecraft.html'">
-    <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
-    <div class="game-name">Minecraft</div>
-    <div class="fire-emoji-container">
-        <div class="fire-emoji">🔥</div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
+<!-- Game Icons (Rounded Rectangles) -->
+<div class="rectangle-container">
+
+    <!-- Minecraft -->
+    <div class="rectangle" onclick="window.location.href='/g/minecraft.html'">
+        <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
+        <div class="game-name">Minecraft</div>
+
+        <!-- Fire Emoji -->
+        <div class="fire-emoji-container">
+            <div class="fire-emoji">🔥</div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+        </div>
+
+        <!-- Rating Badge -->
+        <div class="rating">
+            <span class="star">⭐</span> 4.9
+        </div>
     </div>
+
+    <!-- Baldi’s Basics -->
+    <div class="rectangle" onclick="window.location.href='/g/baldis-basics.html'">
+        <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDH7qC9aMTt3cBjgy5zW7gR9grAAQ" alt="Baldi's Basics">
+        <div class="game-name">Baldi's Basics</div>
+
+        <!-- Rating Badge -->
+        <div class="rating">
+            <span class="star">⭐</span> 4.3
+        </div>
+    </div>
+
+    <!-- 1v1 LOL -->
+    <div class="rectangle" onclick="window.location.href='/g/1v1-lol.html'">
+        <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/200042732/original/024f8a22e06d58c1eed316a539687253e49625c1/ill-edit-your-1v1-lol-videos-and-give-you-thumbnails.jpg" alt="1v1 LOL">
+        <div class="game-name">1v1 LOL</div>
+
+        <!-- Rating Badge -->
+        <div class="rating">
+            <span class="star">⭐</span> 4.4
+        </div>
+    </div>
+
 </div>
 
-       <!-- Game Icon 2 (Example) -->
-        <div class="rectangle" onclick="window.location.href='/g/baldis-basics.html'">
-            <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDH7qC9aMTt3cBjgy5zW7gR9grAAQ" alt="Another Game">
-            <div class="game-name">Baldi's Basics</div>
-        </div>
-
-                <!-- Game Icon 3 (Example) -->
-        <div class="rectangle" onclick="window.location.href='/g/1v1-lol.html'">
-            <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/200042732/original/024f8a22e06d58c1eed316a539687253e49625c1/ill-edit-your-1v1-lol-videos-and-give-you-thumbnails.jpg" alt="Another Game">
-            <div class="game-name">1v1 LOL</div>
-        </div>
-        
-        <!-- Add More Game Icons as needed -->
-    </div>
+    
 
     <script>
         // Initialize particles
