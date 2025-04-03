@@ -58,17 +58,17 @@
             transform: scale(1.1);
         }
 
-        /* Game Icons Container */
+/* Game Icons Container */
 .rectangle-container {
     display: flex;
     gap: 20px;
-    margin-top: 40px;
+    margin-top: 10px; /* Reduced from 40px to move it up */
     justify-content: flex-start;
     margin-right: 0px; /* Move the container further to the left */
 }
 
 
-        /* Individual Game Icon (Rectangle) */
+/* Individual Game Icon (Rectangle) */
 .rectangle {
     width: 400px;
     height: 250px;
@@ -81,24 +81,37 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/* Add shine effect */
+.rectangle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease-in-out;
+}
 
-        .rectangle:hover {
-            transform: scale(1.05);
-        }
+/* When hovering, move the shine effect */
+.rectangle:hover::after {
+    left: 100%;
+}
 
-        /* Image styling for the game icon */
-        .rectangle img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: cover;
-            transition: filter 0.3s ease-in-out;
-        }
+/* Image styling for the game icon */
+.rectangle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+}
 
-        /* Image hover effects */
-        .rectangle:hover img {
-            filter: blur(5px) brightness(0.5);
-        }
+/* Image hover effects */
+.rectangle:hover img {
+    filter: blur(5px) brightness(0.5);
+}
 
     /* Game Name Styling */
 .game-name {
