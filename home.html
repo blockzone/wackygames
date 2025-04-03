@@ -45,30 +45,6 @@
             justify-content: flex-start; /* Align to the left */
         }
 
-        /* Search Bar Styling */
-        .search-container {
-            width: 300px;
-            margin-left: 0; /* Align the search bar all the way to the left */
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 10px;
-            border-radius: 25px; /* Round Rectangle Shape */
-            border: 2px solid #6a0dad; /* Dark Purple Border */
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            background-color: black; /* Black Background */
-            color: white;
-            outline: none;
-            text-align: center;
-        }
-
-        .search-bar::placeholder {
-            color: white;
-            opacity: 0.7;
-        }
-
         /* Logo Styling */
         .logo {
             height: 85px; /* Increased size */
@@ -78,6 +54,45 @@
 
         .logo:hover {
             transform: scale(1.1);
+        }
+
+        
+        /* Circles Container */
+        .circle-container {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px; /* Space between logo and circles */
+        }
+
+        /* Individual Circle */
+        .circle {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Circle Hover Effect */
+        .circle:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Circle Image */
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        /* Image hover effects */
+        .circle:hover img {
+            filter: brightness(0.7);
         }
 
 /* Game Icons Container */
@@ -274,10 +289,31 @@
         <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo" class="logo">
     </a>
 
-    <!-- Search Bar -->
-    <div class="search-container">
-        <input type="text" class="search-bar" id="gameSearch" placeholder="Search Wacky Games..." oninput="searchGames()">
+    
+    <!-- Circles Container -->
+    <div class="circle-container">
+        <!-- Circle 1 -->
+        <div class="circle" onclick="window.location.href='/g/minecraft.html'">
+            <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
+        </div>
+        <!-- Circle 2 -->
+        <div class="circle" onclick="window.location.href='/g/baldis-basics.html'">
+            <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDH7qC9aMTt3cBjgy5zW7gR9grAAQ" alt="Baldi's Basics">
+        </div>
+        <!-- Circle 3 -->
+        <div class="circle" onclick="window.location.href='/g/1v1-lol.html'">
+            <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/200042732/original/024f8a22e06d58c1eed316a539687253e49625c1/ill-edit-your-1v1-lol-videos-and-give-you-thumbnails.jpg" alt="1v1 LOL">
+        </div>
+        <!-- Circle 4 -->
+        <div class="circle" onclick="window.location.href='/g/somegame.html'">
+            <img src="https://somegameimageurl.jpg" alt="Some Game">
+        </div>
+        <!-- Circle 5 -->
+        <div class="circle" onclick="window.location.href='/g/anothergame.html'">
+            <img src="https://anothergameimageurl.jpg" alt="Another Game">
+        </div>
     </div>
+</header>
 </header>
 
 
@@ -367,30 +403,6 @@
             },
             "retina_detect": false
         });
-
-
-        // Search function to filter games based on input
-        function searchGames() {
-            const searchInput = document.getElementById("gameSearch").value.toLowerCase();
-            const gameList = document.getElementById("gameList");
-            const games = gameList.getElementsByClassName("rectangle");
-
-            let found = false;
-
-            for (let i = 0; i < games.length; i++) {
-                const gameName = games[i].getElementsByClassName("game-name")[0].innerText.toLowerCase();
-                
-                if (gameName.includes(searchInput)) {
-                    games[i].style.display = "block"; // Show game if it matches search
-                    found = true;
-                } else {
-                    games[i].style.display = "none"; // Hide game if it doesn't match search
-                }
-            }
-
-            // If no game is found, hide the game list container
-            gameList.style.display = found ? "flex" : "none";
-        }
         
     </script>
 </body>
