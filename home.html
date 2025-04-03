@@ -58,35 +58,26 @@
             transform: scale(1.1);
         }
 
-        /* Rounded Rectangle Positioned to the Left */
-        .big-box {
-            width: 550px; /* Slightly smaller width */
-            height: 275px; /* Slightly smaller height */
+        /* Rounded Rectangle with Image and Game Name */
+        .rectangle {
+            width: 550px; /* Width of the rectangle */
+            height: 275px; /* Height of the rectangle */
             background: url('https://learn.microsoft.com/en-us/gaming/sustainability/images/minecraft-header.png') no-repeat center center;
             background-size: cover;
             border-radius: 30px; /* Rounded edges */
-            position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50px; /* Position towards the left */
-            transform: translateY(-50%); /* Adjust to center properly */
+            position: relative;
+            cursor: pointer;
+            overflow: hidden; /* Prevent image overflow */
+            margin-bottom: 30px; /* Space between rectangles */
             transition: transform 0.3s ease-in-out;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .big-box:hover {
-            transform: translateY(-50%) scale(1.05); /* Zoom effect on hover */
+        .rectangle:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
         }
 
-        /* Create a container for the particles */
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-                .game-name {
+        /* Game Name inside the rectangle */
+        .game-name {
             position: absolute;
             top: 20px;
             left: 20px;
@@ -99,22 +90,42 @@
             letter-spacing: -0.5px;
             text-transform: lowercase;
         }
-        .big-box:hover .game-name {
+
+        .rectangle:hover .game-name {
             opacity: 1;
         }
-        
+
+        /* Create a container for the particles */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div> <!-- This is where the particles will be rendered -->
+    
     <header>
         <a href="/home.html">
             <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo" class="logo">
         </a>
     </header>
 
-    <!-- Rounded Rectangle Positioned to the Left -->
-    <div class="big-box"></div>
+    <!-- Round Rectangle with Image and Game Name (Example) -->
+    <div class="rectangle" onclick="window.location.href='/g/granny-2.html'">
+        <img src="https://i.ytimg.com/vi/M2oAjzvjljw/maxresdefault.jpg" alt="Granny 2">
+        <div class="game-name">Granny 2</div>
+    </div>
+
+    <!-- Add More Round Rectangles Below -->
+    <!-- You can add as many as you want by following the same structure as the above one. -->
+    <div class="rectangle" onclick="window.location.href='/g/another-game.html'">
+        <img src="https://link.to/another-image.jpg" alt="Another Game">
+        <div class="game-name">Another Game</div>
+    </div>
 
     <script>
         // Initialize particles
