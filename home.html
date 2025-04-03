@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +18,6 @@
             overflow: hidden;
         }
 
-                /* Apply Fredoka Bold to everything */
-        body, .tagline, .start-btn, header, .logo {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700; /* Bold */
-        }
-
-
         body {
             background: url('https://files.catbox.moe/ifm0lj.png') no-repeat center center fixed;
             background-size: cover;
@@ -33,6 +27,7 @@
             color: white;
             font-family: 'Fredoka', sans-serif; /* Fredoka font */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-size: 3rem;
             flex-direction: column;
             position: relative;
         }
@@ -64,55 +59,6 @@
             transform: scale(1.1);
         }
 
-        /* Custom Big Image */
-        .big-logo {
-            width: 300px; /* Adjust size */
-            margin-top: 100px; /* Space below header */
-            margin-right: auto; /* Push to the left */
-            margin-left: 50px; /* Move towards the left */
-            transition: transform 0.3s ease-in-out;
-            display: block;
-        }
-
-        .big-logo:hover {
-            transform: scale(1.05);
-        }
-
-        /* Text Below Big Image */
-        .tagline {
-            font-size: 2rem;
-            margin-top: 20px;
-            margin-right: auto;
-            margin-left: 95px; /* Move to the left */
-            text-align: left;
-            display: block;
-        }
-
-        /* Get Started Button */
-        .start-btn {
-            margin-top: 20px;
-            margin-right: auto;
-            margin-left: 95px; /* Move to the left */
-            background-color: #5c2483; /* Dark Purple */
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 1.5rem;
-            font-family: 'Fredoka', sans-serif;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out, background-color 0.3s;
-            text-decoration: none;
-            display: block;
-            width: fit-content;
-        }
-
-        .start-btn:hover {
-            transform: scale(1.1);
-            background-color: #7132a8; /* Lighter Purple */
-        }
-
-
         /* Create a container for the particles */
         #particles-js {
             position: absolute;
@@ -125,21 +71,11 @@
 </head>
 <body>
     <div id="particles-js"></div> <!-- This is where the particles will be rendered -->
-    
     <header>
         <a href="/home.html">
             <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo" class="logo">
         </a>
     </header>
-
-    <!-- Big Logo -->
-    <img src="https://files.catbox.moe/ymfvx8.png" alt="Big Logo" class="big-logo">
-
-    <!-- Tagline -->
-    <div class="tagline">Wacky Games</div>
-
-    <!-- Get Started Button -->
-    <a href="/games.html" class="start-btn">Get Started!</a>
 
     <script>
         // Initialize particles
