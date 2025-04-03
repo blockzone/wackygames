@@ -144,11 +144,24 @@
             height: 100%;
         }
 
-        /* Fire Emoji Container */
-.fire-emoji {
+/* Fire Emoji Container */
+.fire-emoji-container {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Circle Size */
+    height: 50px; /* Circle Size */
+    background-color: white; /* White Circle */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow Effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Fire Emoji */
+.fire-emoji {
     font-size: 30px;
     animation: floatFire 1.5s infinite alternate ease-in-out;
     transition: transform 0.3s ease-in-out;
@@ -156,8 +169,8 @@
 }
 
 /* Fire Hover Effect */
-.rectangle:hover .fire-emoji {
-    transform: scale(1.3) rotate(5deg);
+.rectangle:hover .fire-emoji-container {
+    transform: scale(1.2);
 }
 
 /* Fire Floating Animation */
@@ -189,6 +202,7 @@
 .spark:nth-child(4) { top: -6px; left: 8px; animation-delay: 0.7s; }
 .spark:nth-child(5) { top: -9px; left: 15px; animation-delay: 0.9s; }
 
+
         
     </style>
 </head>
@@ -206,7 +220,8 @@
 <div class="rectangle" onclick="window.location.href='/g/minecraft.html'">
     <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
     <div class="game-name">Minecraft</div>
-    <div class="fire-emoji">🔥
+    <div class="fire-emoji-container">
+        <div class="fire-emoji">🔥</div>
         <div class="spark"></div>
         <div class="spark"></div>
         <div class="spark"></div>
@@ -215,8 +230,7 @@
     </div>
 </div>
 
-
-        <!-- Game Icon 2 (Example) -->
+       <!-- Game Icon 2 (Example) -->
         <div class="rectangle" onclick="window.location.href='/g/baldis-basics.html'">
             <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDH7qC9aMTt3cBjgy5zW7gR9grAAQ" alt="Another Game">
             <div class="game-name">Baldi's Basics</div>
