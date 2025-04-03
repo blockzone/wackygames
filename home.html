@@ -61,7 +61,10 @@
         .big-logo {
             width: 300px; /* Adjust size */
             margin-top: 100px; /* Space below header */
+            margin-right: auto; /* Push to the left */
+            margin-left: 50px; /* Move towards the left */
             transition: transform 0.3s ease-in-out;
+            display: block;
         }
 
         .big-logo:hover {
@@ -72,12 +75,17 @@
         .tagline {
             font-size: 2rem;
             margin-top: 20px;
-            text-align: center;
+            margin-right: auto;
+            margin-left: 50px; /* Move to the left */
+            text-align: left;
+            display: block;
         }
 
         /* Get Started Button */
         .start-btn {
             margin-top: 20px;
+            margin-right: auto;
+            margin-left: 50px; /* Move to the left */
             background-color: #5c2483; /* Dark Purple */
             color: white;
             padding: 15px 30px;
@@ -88,13 +96,15 @@
             cursor: pointer;
             transition: transform 0.3s ease-in-out, background-color 0.3s;
             text-decoration: none;
-            display: inline-block;
+            display: block;
+            width: fit-content;
         }
 
         .start-btn:hover {
             transform: scale(1.1);
             background-color: #7132a8; /* Lighter Purple */
         }
+
 
         /* Create a container for the particles */
         #particles-js {
