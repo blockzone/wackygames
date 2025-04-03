@@ -5,22 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wacky Games</title>
     <link rel="icon" type="image/png" href="https://pngfre.com/wp-content/uploads/Astronaut-11.png">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Include particles.js -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Fredoka font -->
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('https://t3.ftcdn.net/jpg/02/98/47/38/360_F_298473896_Vsz21xTwMtroEeeGgU8pL2vwt3N65pfR.jpg') no-repeat center center fixed;
+            background: url('https://files.catbox.moe/ifm0lj.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Fredoka', sans-serif; /* Fredoka font */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             font-size: 3rem;
+            flex-direction: column;
+            position: relative;
+        }
+        header {
+            width: 100%;
+            height: 60px;
+            background-color: #000000; /* Fully opaque (0% transparency) */
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .logo {
+            height: 80px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        /* Create a container for the particles */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div> <!-- This is where the particles will be rendered -->
+    <header>
+        <a href="/home.html">
+            <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo" class="logo">
+        </a>
+    </header>
+
+    <script>
+        // Initialize particles
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 20, "density": { "enable": false } },
+                "color": { "value": "#ffffff" },  // You can customize particle color here
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.7, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff", // You can customize particle links color here
+                    "opacity": 0.6,
+                    "width": 1
+                },
+                "move": { 
+                    "enable": true, 
+                    "speed": 2, 
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { 
+                    "onhover": { "enable": false },
+                    "onclick": { "enable": false },
+                    "resize": true 
+                }
+            },
+            "retina_detect": false
+        });
+    </script>
+</body>
 </html>
