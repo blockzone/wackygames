@@ -65,17 +65,21 @@
             margin-left: 20px; /* Space between logo and circles */
         }
 
-        /* Individual Circle */
-        .circle {
-            width: 40px;
-            height: 40px;
-            background-color: white;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.3s ease-in-out;
-        }
+/* Individual Circle */
+.circle {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
         /* Circle Hover Effect */
         .circle:hover {
@@ -83,13 +87,14 @@
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
         }
 
-        /* Circle Image */
-        .circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: filter 0.3s ease-in-out;
-        }
+/* Circle Image */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: filter 0.3s ease-in-out;
+}
 
         /* Image hover effects */
         .circle:hover img {
@@ -314,7 +319,6 @@
             <img src="https://play-lh.googleusercontent.com/0pUnIxdTlfubi7Qy2ca1kMHCoA2qn6AF4zRRLgna01jPKuVJgwddW8sKpebeKoJkQFM" alt="PolyBuzz.ai">
         </div>
     </div>
-</header>
 </header>
 
 
