@@ -272,36 +272,41 @@
       background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .game-logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-      z-index: 1;
-    }
+.game-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px; /* Added to move the logo down */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
 
     .game-logo:hover {
       transform: scale(1.1);
     }
 
-    /* Play in Browser Button */
-    .button {
-      background-color: #7e00ff;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      padding: 15px 30px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0px 4px 20px rgba(126, 0, 255, 0.5); /* Button shadow */
-      z-index: 1;
-    }
+/* Play in Browser Button */
+.button {
+  background-color: #7e00ff;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 20px rgba(126, 0, 255, 0.5); /* Button shadow */
+  z-index: 1;
+  margin-top: -40px; /* Increased to move the button down a lot */
+}
 
-    .button:hover {
-      transform: scale(1.1);
-      box-shadow: 0px 8px 30px rgba(126, 0, 255, 0.8); /* Button hover shadow */
-    }
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 30px rgba(126, 0, 255, 0.8); /* Button hover shadow */
+}
+
+
 
 /* Loading screen style */
 .loading-screen {
