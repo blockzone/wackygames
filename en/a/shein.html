@@ -259,7 +259,7 @@
     .link-box-background {
       width: 100%;
       height: 100%;
-      background-image: url('https://example.com/your-background-image.jpg'); /* Custom background for the box */
+      background-image: url('https://www.minderest.com/sites/default/files/how-to-shein-1.jpg'); /* Custom background for the box */
       background-size: cover;
       filter: brightness(0.6) blur(5px); /* Blurring and dimming effect */
       position: absolute;
@@ -303,24 +303,26 @@
       box-shadow: 0px 8px 30px rgba(126, 0, 255, 0.8); /* Button hover shadow */
     }
 
-    /* Loading screen style */
-    .loading-screen {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://xmple.com/wallpaper/purple-black-highlight-gradient-linear-3840x2160-c2-000000-9400d3-l-50-a-120-f-21.svg'); /* Loading background */
-      background-size: cover;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      border-radius: 20px; /* Round corners for the loading screen */
-      overflow: hidden;
-    }
+/* Loading screen style */
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://xmple.com/wallpaper/purple-black-highlight-gradient-linear-3840x2160-c2-000000-9400d3-l-50-a-120-f-21.svg'); /* Loading background */
+  background-size: cover;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 20px; /* Round corners for the loading screen */
+  overflow: hidden;
+  border: 5px solid white; /* White border around the loading screen */
+}
+
 
     .loading-screen.active {
       display: flex;
@@ -343,14 +345,16 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Embedded iframe (hidden initially) */
-    .embed-link {
-      width: 100%;
-      height: 100%;
-      display: none;
-      border-radius: 20px;
-      z-index: 3;
-    }
+/* Embedded link (hidden initially) */
+.embed-link {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 20px;
+  z-index: 3;
+  border: 5px solid white; /* White border with the same thickness as the loading screen border */
+}
+
 
 /* Fire Emoji Container */
 .fire-emoji-container {
@@ -461,7 +465,7 @@
       <div class="link-box-background"></div>
       
       <!-- Game Logo Image (Replace with your own logo URL) -->
-      <img class="game-logo" src="https://example.com/your-logo.png" alt="Game Logo">
+      <img class="game-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR-gM4IKFxSBK1akG7Y91sWFI9yCgK1onFnA&s" alt="Game Logo">
       
       <!-- Play in Browser Button -->
       <a class="button" href="javascript:void(0);" id="playButton">Play in Browser</a>
