@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +31,6 @@
             font-size: 3rem;
             flex-direction: column;
             position: relative;
-            overflow-y: auto;  /* Enable vertical scrolling */
-            height: 100vh;  /* Ensure the body takes the full height of the viewport */
         }
 
         /* Header Styling */
@@ -114,14 +111,14 @@
     gap: 20px;
     margin-top: -100px; /* Reduced from 40px to move it up */
     justify-content: flex-start;
-    margin-right: 550px; /* Move the container further to the left */
+    margin-right: 0px; /* Move the container further to the left */
 }
 
 
 /* Individual Game Icon (Rectangle) */
 .rectangle {
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 165px;
     background-color: black;
     border-radius: 15px;
     box-shadow: 0 0 20px white;
@@ -184,81 +181,6 @@
         .rectangle:hover .game-name {
             opacity: 1;
         }
-
-        /* Small Game Icon Container */
-.small-rectangle-container {
-    display: flex;
-    gap: 20px;
-    margin-top: 126px; /* Adjust as needed */
-    justify-content: flex-start;
-    margin-right: 0px;
-}
-
-/* Individual Small Game Icon (Rounded Rectangle) */
-.small-rectangle {
-    width: 225px;  /* Smaller width */
-    height: 125px; /* Smaller height */
-    background-color: black;
-    border-radius: 25px; /* More rounded corners */
-    box-shadow: 0 0 20px white;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Add shine effect */
-.small-rectangle::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 100%);
-    transform: skewX(-20deg);
-    transition: left 0.5s ease-in-out;
-}
-
-/* When hovering, move the shine effect */
-.small-rectangle:hover::after {
-    left: 100%;
-}
-
-/* Image styling for the small game icon */
-.small-rectangle img {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    object-fit: cover;
-    transition: filter 0.3s ease-in-out;
-}
-
-/* Image hover effects */
-.small-rectangle:hover img {
-    filter: blur(5px) brightness(0.5);
-}
-
-/* Small Game Name Styling */
-.small-game-name {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 16px; /* Smaller font size */
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    color: white;
-    text-align: left;
-    letter-spacing: -0.5px;
-    text-transform: lowercase;
-}
-
-/* Game Name visible on hover */
-.small-rectangle:hover .small-game-name {
-    opacity: 1;
-}
 
         /* Create a container for the particles */
         #particles-js {
@@ -402,41 +324,84 @@
         </div>
     </div>
 </header>
-
-
-<!-- Game Icons (Rounded Rectangles) -->
+    
 <div class="rectangle-container">
+<div class="rectangle" onclick="window.location.href='/en/g/minecraft.html'">
+    <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
+    <div class="game-name">Minecraft</div>
 
-    <!-- Minecraft -->
-    <div class="rectangle" onclick="window.location.href='/en/g/minecraft.html'">
-        <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
-        <div class="game-name">Minecraft</div>
-
-        <!-- Fire Emoji -->
-        <div class="fire-emoji-container">
-            <div class="fire-emoji">🔥</div>
-            <div class="spark"></div>
-            <div class="spark"></div>
-            <div class="spark"></div>
-            <div class="spark"></div>
-            <div class="spark"></div>
-        </div>
-
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.9
-        </div>
+    <!-- Fire Emoji -->
+    <div class="fire-emoji-container">
+        <div class="fire-emoji">🔥</div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
+        <div class="spark"></div>
     </div>
 
-    <!-- Small Rounded Game Icon Container -->
-<div class="small-rectangle-container">
-    <div class="small-rectangle">
-        <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
-        <div class="small-game-name">Minecraft</div>
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.9
     </div>
 </div>
 
-    
+<!-- Baldi’s Basics -->
+<div class="rectangle" onclick="window.location.href='/en/g/baldis-basics.html'">
+    <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg" alt="Baldi's Basics">
+    <div class="game-name">Baldi's Basics</div>
+
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.3
+    </div>
+</div>
+
+<!-- 1v1 LOL -->
+<div class="rectangle" onclick="window.location.href='/en/g/1v1-lol.html'">
+    <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/200042732/original/024f8a22e06d58c1eed316a539687253e49625c1/ill-edit-your-1v1-lol-videos-and-give-you-thumbnails.jpg" alt="1v1 LOL">
+    <div class="game-name">1v1 LOL</div>
+
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.4
+    </div>
+</div>
+
+<!-- Among Us -->
+<div class="rectangle" onclick="window.location.href='/en/g/among-us.html'">
+    <img src="https://cdn2.unrealengine.com/egs-amongus-innersloth-s1-2560x1440-586a4101f969.jpg" alt="Among Us">
+    <div class="game-name">Among Us</div>
+
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.6
+    </div>
+</div>
+
+<!-- FNAF -->
+<div class="rectangle" onclick="window.location.href='/en/g/fnaf.html'">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/Five_Nights_at_Freddy%27s_cover.jpg" alt="FNAF">
+    <div class="game-name">FNAF</div>
+
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.2
+    </div>
+</div>
+
+<!-- Geometry Dash -->
+<div class="rectangle" onclick="window.location.href='/en/g/geometry-dash.html'">
+    <img src="https://play-lh.googleusercontent.com/XFhRuh3oYwfb9Kp4h9KLwPioN_LktK_0LzBNt7rbtxP8KzRkDY5p6uGh3NRPVHXfcKw=w240-h480-rw" alt="Geometry Dash">
+    <div class="game-name">Geometry Dash</div>
+
+    <!-- Rating Badge -->
+    <div class="rating">
+        <span class="star">⭐</span> 4.7
+    </div>
+</div>
+
+
 
     <script>
         // Initialize particles
