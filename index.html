@@ -226,7 +226,43 @@
     transform: none;
 }
 
+/* Small Game Box Container */
+.small-game-box-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
 
+/* Small Game Box (Larger Size) */
+.small-game-box {
+    width: 239px;  /* Increased width */
+    height: 239px; /* Increased height */
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Game Box Hover Effect */
+.small-game-box:hover {
+    transform: scale(1.15);
+}
+
+/* Game Box Image */
+.small-game-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+}
+
+/* Hover Effect - Blur and Dim */
+.small-game-box:hover img {
+    filter: brightness(0.6) blur(3px);
+}
 
 /* Fire Emoji Container */
 .fire-emoji-container {
@@ -372,6 +408,31 @@
     </div>
 
 </div>
+
+    <!-- Small Game Box Container -->
+<div class="small-game-box-container">
+    <!-- Game Box 1 -->
+    <div class="small-game-box" onclick="window.location.href='/en/a/game1.html'">
+        <img src="game1-thumbnail.jpg" alt="Game 1">
+    </div>
+    <!-- Game Box 2 -->
+    <div class="small-game-box" onclick="window.location.href='/en/a/game2.html'">
+        <img src="game2-thumbnail.jpg" alt="Game 2">
+    </div>
+    <!-- Game Box 3 -->
+    <div class="small-game-box" onclick="window.location.href='/en/a/game3.html'">
+        <img src="game3-thumbnail.jpg" alt="Game 3">
+    </div>
+    <!-- Game Box 4 -->
+    <div class="small-game-box" onclick="window.location.href='/en/a/game4.html'">
+        <img src="game4-thumbnail.jpg" alt="Game 4">
+    </div>
+    <!-- Game Box 5 -->
+    <div class="small-game-box" onclick="window.location.href='/en/a/game5.html'">
+        <img src="game5-thumbnail.jpg" alt="Game 5">
+    </div>
+</div>
+
 
     
 
