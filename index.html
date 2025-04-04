@@ -1,9 +1,12 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wacky Games | Free Online Games on Crazy Games</title>
+    <title>Shein - Online Shopping</title>
     <link rel="icon" type="image/png" href="https://pngfre.com/wp-content/uploads/Astronaut-11.png">
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Include particles.js -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Fredoka font -->
@@ -228,6 +231,136 @@
 }
 
 
+    /* Container for the link box */
+    .link-box-container {
+      position: relative;
+      width: 780px;
+      height: 440px;
+    }
+
+    /* The Round Rectangle with always visible white round border */
+    .link-box {
+      width: 100%;
+      height: 100%;
+      border: 5px solid white;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Background image with blur and dimming effect */
+    .link-box-background {
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.minderest.com/sites/default/files/how-to-shein-1.jpg'); /* Custom background for the box */
+      background-size: cover;
+      filter: brightness(0.6) blur(5px); /* Blurring and dimming effect */
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .link-box:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.game-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-top: 20px; /* Added to move the logo down */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+
+    .game-logo:hover {
+      transform: scale(1.1);
+    }
+
+/* Play in Browser Button */
+.button {
+  background-color: #7e00ff;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 20px rgba(126, 0, 255, 0.5); /* Button shadow */
+  z-index: 1;
+  margin-top: -40px; /* Increased to move the button down a lot */
+}
+
+.button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 30px rgba(126, 0, 255, 0.8); /* Button hover shadow */
+}
+
+
+
+/* Loading screen style */
+.loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://xmple.com/wallpaper/purple-black-highlight-gradient-linear-3840x2160-c2-000000-9400d3-l-50-a-120-f-21.svg'); /* Loading background */
+  background-size: cover;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 20px; /* Round corners for the loading screen */
+  overflow: hidden;
+  border: 5px solid white; /* White border around the loading screen */
+}
+
+
+    .loading-screen.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    /* Loading Circle */
+    .loading-circle {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #7e00ff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Loading circle animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+/* Embedded link (hidden initially) */
+.embed-link {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 20px;
+  z-index: 3;
+  border: 5px solid white; /* White border with the same thickness as the loading screen border */
+}
+
 
 /* Fire Emoji Container */
 .fire-emoji-container {
@@ -324,60 +457,29 @@
         </div>
     </div>
 </header>
-    
-<div class="rectangle-container">
-<div class="rectangle" onclick="window.location.href='/en/g/minecraft.html'">
-    <img src="https://gaming-cdn.com/images/news/articles/7191/cover/minecraft-gets-a-new-artwork-cover66856ea7d02ad.jpg" alt="Minecraft">
-    <div class="game-name">Minecraft</div>
 
-    <!-- Fire Emoji -->
-    <div class="fire-emoji-container">
-        <div class="fire-emoji">🔥</div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
-        <div class="spark"></div>
+    <div class="link-box-container">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <!-- Loading Circle -->
+      <div class="loading-circle"></div>
     </div>
 
-    <!-- Rating Badge -->
-    <div class="rating">
-        <span class="star">⭐</span> 4.9
+    <!-- Link Box with Custom Background -->
+    <div class="link-box" onclick="startLoadingScreen()">
+      <!-- Background Image -->
+      <div class="link-box-background"></div>
+      
+      <!-- Game Logo Image (Replace with your own logo URL) -->
+      <img class="game-logo" src="https://static.vecteezy.com/system/resources/previews/054/650/813/non_2x/shein-logo-rounded-shein-logo-free-png.png" alt="Game Logo">
+      
+      <!-- Play in Browser Button -->
+      <a class="button" href="javascript:void(0);" id="playButton">Play in Browser</a>
     </div>
-</div>
 
-<!-- Baldi’s Basics -->
-<div class="rectangle" onclick="window.location.href='/en/g/baldis-basics.html'">
-    <img src="https://i.ytimg.com/vi/ROaXdApP4nM/hq720.jpg" alt="Baldi's Basics">
-    <div class="game-name">Baldi's Basics</div>
-
-    <!-- Rating Badge -->
-    <div class="rating">
-        <span class="star">⭐</span> 4.3
-    </div>
-</div>
-
-<!-- 1v1 LOL -->
-<div class="rectangle" onclick="window.location.href='/en/g/1v1-lol.html'">
-    <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/200042732/original/024f8a22e06d58c1eed316a539687253e49625c1/ill-edit-your-1v1-lol-videos-and-give-you-thumbnails.jpg" alt="1v1 LOL">
-    <div class="game-name">1v1 LOL</div>
-
-    <!-- Rating Badge -->
-    <div class="rating">
-        <span class="star">⭐</span> 4.4
-    </div>
-</div>
-
-<!-- Among Us -->
-<div class="rectangle" onclick="window.location.href='/en/g/geometry-dash.html'">
-    <img src="https://images3.alphacoders.com/120/thumb-1920-1202615.jpg" alt="Geometry Dash">
-    <div class="game-name">Geometry Dash</div>
-
-    <!-- Rating Badge -->
-    <div class="rating">
-        <span class="star">⭐</span> 4.6
-    </div>
-</div>
+    <!-- Embedded Link (hidden initially) -->
+    <iframe class="embed-link" id="embedLink" src="https://now.gg/apps/lunime/2132/gacha-club.html"></iframe>
+  </div>
 
     <script>
         // Initialize particles
@@ -417,5 +519,28 @@
         });
         
     </script>
+
+  
+  <script>
+    // Function to start the loading screen and embed the link after a delay
+    function startLoadingScreen() {
+      var loadingScreen = document.getElementById('loadingScreen');
+      var embedLink = document.getElementById('embedLink');
+      
+      // Show the loading screen and fade it in
+      loadingScreen.classList.add('active');
+
+      // Hide the link box while loading
+      document.querySelector('.link-box').style.display = 'none';
+
+      // After 3 seconds, hide the loading screen and show the embedded link
+      setTimeout(function() {
+        // Hide the loading screen and show the embedded iframe
+        loadingScreen.classList.remove('active');
+        embedLink.style.display = 'block';
+      }, 3000); // 3-second delay before showing the embedded content
+    }
+  </script>
+  
 </body>
 </html>
