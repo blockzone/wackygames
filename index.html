@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +111,7 @@
 .rectangle-container {
     display: flex;
     gap: 20px;
-    margin-top: 170px; /* Reduced from 40px to move it up */
+    margin-top: -100px; /* Reduced from 40px to move it up */
     justify-content: flex-start;
     margin-right: 0px; /* Move the container further to the left */
 }
@@ -228,73 +229,7 @@
     transform: none;
 }
 
-        /* Small Game Box Container */
-        .small-game-box-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
 
-        /* Small Game Box (Larger Size) */
-        .small-game-box {
-            width: 239px;  /* Increased width */
-            height: 239px; /* Increased height */
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 18px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        /* Game Box Hover Effect */
-        .small-game-box:hover {
-            transform: scale(1.15);
-        }
-
-        /* Game Box Image */
-        .small-game-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: filter 0.3s ease-in-out;
-        }
-
-        /* Hover Effect - Blur and Dim */
-        .small-game-box:hover img {
-            filter: brightness(0.6) blur(3px);
-        }
-
-        /* Rating Badge */
-        .rating {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: white;
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        /* Star Emoji */
-        .rating .star {
-            color: gold;
-            font-size: 18px;
-        }
-
-        /* Show rating on hover */
-        .small-game-box:hover .rating {
-            opacity: 1;
-        }
 
 /* Fire Emoji Container */
 .fire-emoji-container {
@@ -440,55 +375,6 @@
     </div>
 
 </div>
-
-<!-- Small Game Box Container -->
-<div class="small-game-box-container">
-    <!-- Game Box 1 -->
-    <div class="small-game-box" onclick="window.location.href='/en/a/chatgpt.html'">
-        <img src="https://ih1.redbubble.net/image.4794079437.9113/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="Game 1">
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.8
-        </div>
-    </div>
-    
-    <!-- Game Box 2 -->
-    <div class="small-game-box" onclick="window.location.href='/en/a/poki.html'">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0UOfhJT5UOAzWznFy3EuIOh8dbEcRCeWfcQ&s" alt="Game 2">
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.4
-        </div>
-    </div>
-
-    <!-- Game Box 3 -->
-    <div class="small-game-box" onclick="window.location.href='/en/a/nowgg.html'">
-        <img src="https://miro.medium.com/v2/resize:fit:1000/1*YM7t6RluDCb0XT62yy2aqQ.png" alt="Game 3">
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.7
-        </div>
-    </div>
-
-    <!-- Game Box 4 -->
-    <div class="small-game-box" onclick="window.location.href='/en/a/github.html'">
-        <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_640.png" alt="Game 4">
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.3
-        </div>
-    </div>
-
-    <!-- Game Box 5 -->
-    <div class="small-game-box" onclick="window.location.href='/en/a/amazon.html'">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc0L9pU1IjqhK0u8GC0kQBXDB2sj_nd4UDVQ&s" alt="Game 5">
-        <!-- Rating Badge -->
-        <div class="rating">
-            <span class="star">⭐</span> 4.9
-        </div>
-    </div>
-</div>
-
 
     
 
