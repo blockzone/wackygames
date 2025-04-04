@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -290,15 +291,15 @@
 .button {
   background-color: #7e00ff;
   color: white;
-  font-size: 30px; /* Bigger font size */
+  font-size: 24px;
   font-weight: bold;
-  padding: 20px 40px; /* Bigger padding */
-  border-radius: 12px;
+  padding: 15px 30px;
+  border-radius: 10px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0px 6px 30px rgba(126, 0, 255, 0.6);
+  box-shadow: 0px 4px 20px rgba(126, 0, 255, 0.5); /* Button shadow */
   z-index: 1;
-  margin-top: 0px; /* Reset margin */
+  margin-top: -40px; /* Increased to move the button down a lot */
 }
 
 .button:hover {
@@ -469,14 +470,12 @@
       <!-- Background Image -->
       <div class="link-box-background"></div>
       
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <!-- Game Logo Image -->
-  <img class="game-logo" src="https://static.vecteezy.com/system/resources/previews/054/650/813/non_2x/shein-logo-rounded-shein-logo-free-png.png" alt="Game Logo">
-  
-  <!-- Play in Browser Button -->
-  <a class="button" href="javascript:void(0);" id="playButton">Play in Browser</a>
-</div>
-
+      <!-- Game Logo Image (Replace with your own logo URL) -->
+      <img class="game-logo" src="https://static.vecteezy.com/system/resources/previews/054/650/813/non_2x/shein-logo-rounded-shein-logo-free-png.png" alt="Game Logo">
+      
+      <!-- Play in Browser Button -->
+      <a class="button" href="javascript:void(0);" id="playButton">Play in Browser</a>
+    </div>
 
     <!-- Embedded Link (hidden initially) -->
     <iframe class="embed-link" id="embedLink" src="https://now.gg/apps/lunime/2132/gacha-club.html"></iframe>
