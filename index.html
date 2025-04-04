@@ -228,43 +228,73 @@
     transform: none;
 }
 
-/* Small Game Box Container */
-.small-game-box-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
+        /* Small Game Box Container */
+        .small-game-box-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-/* Small Game Box (Larger Size) */
-.small-game-box {
-    width: 239px;  /* Increased width */
-    height: 239px; /* Increased height */
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
+        /* Small Game Box (Larger Size) */
+        .small-game-box {
+            width: 239px;  /* Increased width */
+            height: 239px; /* Increased height */
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
 
-/* Game Box Hover Effect */
-.small-game-box:hover {
-    transform: scale(1.15);
-}
+        /* Game Box Hover Effect */
+        .small-game-box:hover {
+            transform: scale(1.15);
+        }
 
-/* Game Box Image */
-.small-game-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: filter 0.3s ease-in-out;
-}
+        /* Game Box Image */
+        .small-game-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease-in-out;
+        }
 
-/* Hover Effect - Blur and Dim */
-.small-game-box:hover img {
-    filter: brightness(0.6) blur(3px);
-}
+        /* Hover Effect - Blur and Dim */
+        .small-game-box:hover img {
+            filter: brightness(0.6) blur(3px);
+        }
+
+        /* Rating Badge */
+        .rating {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: white;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Star Emoji */
+        .rating .star {
+            color: gold;
+            font-size: 18px;
+        }
+
+        /* Show rating on hover */
+        .small-game-box:hover .rating {
+            opacity: 1;
+        }
 
 /* Fire Emoji Container */
 .fire-emoji-container {
