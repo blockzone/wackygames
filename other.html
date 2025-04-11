@@ -45,24 +45,31 @@
       z-index: 1;
     }
 
-    .sidebar ul {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 2rem;
-    }
+/* Sidebar Category Icon Styling */
+.category-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px;
+  margin-right: 10px; /* Space between icon and category name */
+  vertical-align: middle; /* Vertically center the icon with text */
+  object-fit: cover;
+}
 
-    .sidebar ul li {
-      margin-bottom: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      cursor: pointer;
-    }
+/* Sidebar list item styling */
+.sidebar ul li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  display: flex; /* Align icon and text in a row */
+  align-items: center; /* Center the items vertically */
+}
 
-    .sidebar ul li:hover {
-      background-color: #333;
-      transform: scale(1.05);
-    }
+.sidebar ul li:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
 
 .search-container {
   position: absolute;
@@ -246,20 +253,21 @@
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <ul>
-      <li>New</li>
-      <li>Popular</li>
-      <li>My Favorites</li>
-      <hr style="border: 1px solid #333;">
-      <li>Action</li>
-      <li>Adventure</li>
-      <li>Puzzle</li>
-      <li>Strategy</li>
-      <li>Racing</li>
-      <li>Sports</li>
-    </ul>
-  </div>
+<div class="sidebar">
+  <ul>
+    <li><img class="category-icon" src="https://example.com/icon1.png" alt="New"> New</li>
+    <li><img class="category-icon" src="https://example.com/icon2.png" alt="Popular"> Popular</li>
+    <li><img class="category-icon" src="https://example.com/icon3.png" alt="My Favorites"> My Favorites</li>
+    <hr style="border: 1px solid #333;">
+    <li><img class="category-icon" src="https://example.com/icon4.png" alt="Action"> Action</li>
+    <li><img class="category-icon" src="https://example.com/icon5.png" alt="Adventure"> Adventure</li>
+    <li><img class="category-icon" src="https://example.com/icon6.png" alt="Puzzle"> Puzzle</li>
+    <li><img class="category-icon" src="https://example.com/icon7.png" alt="Strategy"> Strategy</li>
+    <li><img class="category-icon" src="https://example.com/icon8.png" alt="Racing"> Racing</li>
+    <li><img class="category-icon" src="https://example.com/icon9.png" alt="Sports"> Sports</li>
+  </ul>
+</div>
+
 
   <div class="header">
     <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo">
