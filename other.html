@@ -64,6 +64,60 @@
       transform: scale(1.05);
     }
 
+.search-container {
+  position: absolute;
+  top: 10px;
+  left: 175px; /* Moves the search bar to the left a bit */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Circles Container */
+.circle-container {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px; /* Space between search bar and circles */
+}
+
+/* Individual Circle */
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Dark purple glow */
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white; /* White border around the image */
+}
+
+/* Circle Hover Effect */
+.circle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(75, 0, 130, 1); /* Brighter dark purple glow on hover */
+}
+
+/* Circle Image */
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: filter 0.3s ease-in-out;
+}
+
+/* Image hover effects */
+.circle:hover img {
+  filter: brightness(0.7);
+}
+
+/* Search Input */
 .search-input {
   margin-top: 10px;
   padding: 12px 16px;
@@ -74,16 +128,6 @@
   background-color: #444;
   color: white;
   box-sizing: border-box;
-}
-
-.search-container {
-  position: absolute;
-  top: 10px;
-  left: 175px; /* Moves the search bar to the left a bit */
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  z-index: 3;
 }
 
     .search-results {
@@ -221,10 +265,35 @@
     <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo">
   </div>
 
-  <div class="search-container">
-    <input class="search-input" type="text" id="search-bar" placeholder="Search games...">
-    <div class="search-results" id="search-results"></div>
+<div class="search-container">
+  <input class="search-input" type="text" id="search-bar" placeholder="Search games...">
+  
+  <!-- Circles Container -->
+  <div class="circle-container">
+    <!-- Circle 1 -->
+    <div class="circle" onclick="window.location.href='/en/a/shein.html'">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdexwddX37tGwJJ2VW_Qkltm_UwvpxQezdMw&s" alt="Shein - Online Shop">
+    </div>
+    <!-- Circle 2 -->
+    <div class="circle" onclick="window.location.href='/en/a/akinator.html'">
+      <img src="https://play-lh.googleusercontent.com/rjX8LZCV-MaY3o927R59GkEwDOIRLGCXFphaOTeFFzNiYY6SQ4a-B_5t7eUPlGANrcw" alt="Akinator">
+    </div>
+    <!-- Circle 3 -->
+    <div class="circle" onclick="window.location.href='/en/a/wsup-ai.html'">
+      <img src="https://cdn-www.bluestacks.com/bs-images/Icon_ai.wsup_1.png" alt="wsup.ai">
+    </div>
+    <!-- Circle 4 -->
+    <div class="circle" onclick="window.location.href='/en/a/temu.html'">
+      <img src="https://aimg.kwcdn.com/upload_aimg/m-img/785681a9-3a72-4e62-90e8-c9b8245739df.jpeg" alt="Temu">
+    </div>
+    <!-- Circle 5 -->
+    <div class="circle" onclick="window.location.href='/en/a/poly-buzz.html'">
+      <img src="https://play-lh.googleusercontent.com/0pUnIxdTlfubi7Qy2ca1kMHCoA2qn6AF4zRRLgna01jPKuVJgwddW8sKpebeKoJkQFM" alt="PolyBuzz.ai">
+    </div>
   </div>
+
+  <div class="search-results" id="search-results"></div>
+</div>
 
   <div class="main-content">
     <div class="game-slider">
