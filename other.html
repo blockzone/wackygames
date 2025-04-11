@@ -74,7 +74,7 @@
 .search-container {
   position: absolute;
   top: 10px;
-  left: 175px; /* Moves the search bar to the left a bit */
+  left: 175px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -103,7 +103,9 @@
   display: none;
   flex-direction: column;
   z-index: 3;
-  padding: 10px; /* Adds padding for better spacing */
+  padding: 10px;
+  max-height: 250px; /* Shortens the dropdown */
+  overflow-y: auto; /* Adds scroll if too many results */
 }
 
 .search-result-item {
@@ -331,33 +333,46 @@
   </div>
 
   <script>
-    const searchBar = document.getElementById('search-bar');
-    const searchResults = document.getElementById('search-results');
+const searchBar = document.getElementById('search-bar');
+const searchResults = document.getElementById('search-results');
 
-    const games = [
-      { name: 'Geometry Dash', logo: 'https://upload.wikimedia.org/wikipedia/en/9/9f/Geometry_Dash_Logo.PNG' },
-      { name: 'Minecraft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Minecraft_logo.svg' },
-      { name: 'Fortnite', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Fortnite_logo.svg' },
-    ];
+const games = [
+  { name: 'Geometry Dash', logo: 'https://upload.wikimedia.org/wikipedia/en/9/9f/Geometry_Dash_Logo.PNG', url: '/geometry-dash' },
+  { name: 'Minecraft', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Minecraft_logo.svg', url: '/minecraft' },
+  { name: 'Fortnite', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Fortnite_logo.svg', url: '/fortnite' },
+];
 
-    searchBar.addEventListener('input', function () {
-      const query = searchBar.value.toLowerCase();
-      const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
+searchBar.addEventListener('input', function () {
+  const query = searchBar.value.toLowerCase();
+  const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
 
-      searchResults.innerHTML = '';
+  searchResults.innerHTML = '';
 
-      filteredGames.forEach(game => {
-        const resultItem = document.createElement('div');
-        resultItem.classList.add('search-result-item');
-        resultItem.innerHTML = `
-          <img src="${game.logo}" alt="${game.name}">
-          <div>${game.name}</div>
-        `;
-        searchResults.appendChild(resultItem);
-      });
-
-      searchResults.style.display = filteredGames.length > 0 ? 'block' : 'none';
+  filteredGames.forEach(game => {
+    const resultItem = document.createElement('div');
+    resultItem.classList.add('search-result-item');
+    resultItem.innerHTML = `
+      <img src="${game.logo}" alt="${game.name}">
+      <div>${game.name}</div>
+    `;
+    
+    // Add click listener to navigate to the game's URL
+    resultItem.addEventListener('click', () => {
+      window.location.href = game.url;
     });
+
+    searchResults.appendChild(resultItem);
+  });
+
+  searchResults.style.display = filteredGames.length > 0 ? 'block' : 'none';
+});
+
+// Close the dropdown when clicking outside the search bar
+document.addEventListener('click', function (event) {
+  if (!searchBar.contains(event.target) && !searchResults.contains(event.target)) {
+    searchResults.style.display = 'none';
+  }
+});
   </script>
 </body>
 </html>
