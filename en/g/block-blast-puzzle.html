@@ -257,6 +257,28 @@
       overflow: hidden;
       z-index: 0;
     }
+
+.game-container {
+  width: 600px;
+  height: 250px;
+  margin: 40px auto;
+  padding: 0;
+  background-color: #1e1e1e;
+  border: 3px solid white;
+  border-radius: 50px; /* round rectangle shape */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50px;
+}
     
   </style>
 </head>
@@ -312,6 +334,10 @@
   <div class="search-results" id="search-results"></div>
 </div>
 
+<div class="game-container">
+  <iframe src="https://example.com" title="Embedded Site"></iframe>
+</div>
+  
     <!-- Particle Container -->
   <div class="particles-container" id="particles-container"></div>
 
