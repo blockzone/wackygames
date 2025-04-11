@@ -12,7 +12,6 @@
   font-family: 'Fredoka', sans-serif;
   background-color: #121212;
   color: white;
-  /* overflow: hidden; ❌ Remove or comment this line */
 }
 
 
@@ -215,85 +214,6 @@
       margin-left: 240px;
       padding: 2rem;
     }
-
-    .game-slider {
-      display: flex;
-      gap: 1.5rem;
-      padding-left: 1rem;
-      margin-top: 100px;
-    }
-
-    .game-card {
-      position: relative;
-      flex: 0 0 auto;
-      width: 320px;
-      height: 200px;
-      background-color: #2b2b2b;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .game-card:hover {
-      transform: scale(1.05);
-    }
-
-    .game-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-.game-name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #555; /* Grey background */
-  color: white;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  text-align: center;
-  line-height: 30px;
-  font-size: 1rem;
-}
-
-    .rating {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: white;
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-      pointer-events: none;
-    }
-
-    .rating .star {
-      color: gold;
-      font-size: 18px;
-    }
-
-    .game-card:hover .rating {
-      opacity: 1;
-    }
-
-    .game-card img {
-      transition: filter 0.3s ease-in-out;
-    }
-
-    /* Game card hover effect */
-    .game-card:hover img {
-      filter: brightness(0.7);
-    }
-
     
     /* Particle Styles */
     .particle {
@@ -394,67 +314,6 @@
 
     <!-- Particle Container -->
   <div class="particles-container" id="particles-container"></div>
-  
-<div class="main-content">
-  <!-- First Row of Game Cards -->
-  <div class="game-slider">
-    <a href="/en/g/block-blast-puzzle.html" class="game-card">
-      <img src="https://img.tapimg.net/market/images/f0accbce41c2bd231af48f93d25b5605.png" alt="Game 1" />
-      <div class="game-name">Block Blast Puzzle</div>
-      <div class="rating"><span class="star">★</span> 4.9</div>
-    </a>
-    <a href="/en/g/granny.html" class="game-card">
-      <img src="https://wallpapersok.com/images/high/granny-scary-face-up-close-0k9r7sfhypjrajj4.jpg" alt="Game 2" />
-      <div class="game-name">Horror Granny</div>
-      <div class="rating"><span class="star">★</span> 4.7</div>
-    </a>
-    <a href="/en/g/glass-bridge-obby.html" class="game-card">
-      <img src="https://i.ytimg.com/vi/7I_8zQiwl4A/maxresdefault.jpg" alt="Game 3" />
-      <div class="game-name">Glass Bridge Obby</div>
-      <div class="rating"><span class="star">★</span> 4.2</div>
-    </a>
-  </div>
-
-  <!-- Second Row of Game Cards -->
-  <div class="game-slider" style="margin-top: 2rem;">
-    <a href="/en/g/slope.html" class="game-card">
-      <img src="https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/14b0224a-b8a8-4e72-b127-9fd1b73e8482/2539008382/slope-unblocked-qpg-screenshot.png" alt="Game 4" />
-      <div class="game-name">Slope</div>
-      <div class="rating"><span class="star">★</span> 4.6</div>
-    </a>
-    <a href="/en/g/rocket-league.html" class="game-card">
-      <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2017/08/25/f8052807-f589-4fb5-84d4-b918b03da7fc/rocket-league-octane" alt="Game 5" />
-      <div class="game-name">Rocket League</div>
-      <div class="rating"><span class="star">★</span> 4.8</div>
-    </a>
-    <a href="/en/g/bubble-shooter.html" class="game-card">
-      <img src="https://store-images.s-microsoft.com/image/apps.40207.14592179470849326.32508a85-f3b8-4fe6-8777-c69c6f697155.fb7d307b-35fd-4307-8eba-719cafc3d0ce?q=90&w=480&h=270" alt="Game 6" />
-      <div class="game-name">Bubble Shooter</div>
-      <div class="rating"><span class="star">★</span> 4.3</div>
-    </a>
-  </div>
-
-  <!-- Third Row of Game Cards -->
-  <div class="game-slider" style="margin-top: 2rem;">
-    <a href="/en/g/monkey-mart.html" class="game-card">
-      <img src="https://defold.com/images/games/monkeymart-half.png" alt="Game 7" />
-      <div class="game-name">Monkey Mart</div>
-      <div class="rating"><span class="star">★</span> 4.5</div>
-    </a>
-    <a href="/en/g/cut-the-rope.html" class="game-card">
-      <img src="https://lh6.googleusercontent.com/proxy/m9MTcdAJHpXas9hgXvErFczYlgWtNZVCQeMRxQipBrfzGNNlXgrmouzmG2wMvWNRhGcnWWSAzeTq1AMjGFvxQTGs7arzU07BqCAzDs8b6Z86kg9y6xqU6PmQ" alt="Game 8" />
-      <div class="game-name">Cut The Rope</div>
-      <div class="rating"><span class="star">★</span> 4.4</div>
-    </a>
-    <a href="/en/g/drive-mad.html" class="game-card">
-      <img src="https://lh3.googleusercontent.com/wVTQA0jf4ukvG3NcbHL_qexD4v3DymslrBSnBMN9YlMh0xBGPjmcaL-nYP0LqyGNLfoY5vIVFIOrLEuZPsJybP_x=s1280-w1280-h800" alt="Game 9" />
-      <div class="game-name">Drive Mad</div>
-      <div class="rating"><span class="star">★</span> 5.0</div>
-    </a>
-  </div>
-</div>
-
-
 
   <script>
 const searchBar = document.getElementById('search-bar');
