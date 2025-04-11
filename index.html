@@ -9,6 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Include particles.js -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Fredoka font -->
     <style>
+
+        display: flex;
+justify-content: center;
+align-items: center;
+
+        padding-left: 270px; /* Add space for sidebar */
+display: flex;
+justify-content: center;
+align-items: center;
+
         /* Prevent vertical scrolling */
         html, body {
             margin: 0;
@@ -288,8 +298,47 @@
 .spark:nth-child(4) { top: -6px; left: 8px; animation-delay: 0.7s; }
 .spark:nth-child(5) { top: -9px; left: 15px; animation-delay: 0.9s; }
 
+        /* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    font-family: 'Fredoka', sans-serif;
+}
 
-        
+.sidebar-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00;
+}        
     </style>
 </head>
 <body>
@@ -325,6 +374,19 @@
         </div>
     </div>
 </header>
+
+    <!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-title">🎮 Wacky Games</div>
+    <nav class="sidebar-nav">
+        <a href="#">Home</a>
+        <a href="#">Trending</a>
+        <a href="#">All Games</a>
+        <a href="#">Categories</a>
+        <a href="#">About</a>
+    </nav>
+</div>
+
     
 <div class="rectangle-container">
 <div class="rectangle" onclick="window.location.href='/en/g/minecraft.html'">
