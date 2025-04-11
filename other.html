@@ -45,142 +45,146 @@
       z-index: 1;
     }
 
-/* Sidebar Category Icon Styling */
-.category-icon {
-  width: 20px; /* Adjust icon size */
-  height: 20px;
-  margin-right: 10px; /* Space between icon and category name */
-  vertical-align: middle; /* Vertically center the icon with text */
-  object-fit: cover;
-}
+    /* Sidebar Category Icon Styling */
+    .category-icon {
+      width: 20px; /* Adjust icon size */
+      height: 20px;
+      margin-right: 10px; /* Space between icon and category name */
+      vertical-align: middle; /* Vertically center the icon with text */
+      object-fit: cover;
+    }
 
-.sidebar ul li {
-  margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Add gap between image and text */
-}
+    .sidebar ul {
+      padding: 0;
+      list-style-type: none;
+    }
 
-.sidebar ul li img {
-  width: 24px; /* Set the size of the icon */
-  height: 24px;
-  object-fit: contain;
-}
+    .sidebar ul li {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
 
-.sidebar ul li:hover {
-  background-color: #333;
-  transform: scale(1.05);
-}
+    .sidebar ul li img {
+      width: 24px; /* Set the size of the icon */
+      height: 24px;
+      object-fit: contain;
+    }
 
-.search-container {
-  position: absolute;
-  top: 10px;
-  left: 175px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  z-index: 3;
-}
+    .sidebar ul li:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
 
-.search-input {
-  margin-top: 10px;
-  padding: 12px 16px;
-  font-size: 16px;
-  width: 100%; /* Full width of the container */
-  border: none;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  box-sizing: border-box;
-}
+    .search-container {
+      position: absolute;
+      top: 10px;
+      left: 175px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 3;
+    }
 
-.search-results {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: #2b2b2b;
-  width: calc(100% - 32px); /* Matches the width of the search bar minus padding */
-  border-radius: 10px; /* Rounded corners */
-  display: none;
-  flex-direction: column;
-  z-index: 3;
-  padding: 10px;
-  max-height: 250px; /* Shortens the dropdown */
-  overflow-y: auto; /* Adds scroll if too many results */
-}
+    .search-input {
+      margin-top: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      width: 100%; /* Full width of the container */
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      box-sizing: border-box;
+    }
 
-.search-result-item {
-  padding: 10px;
-  display: flex;
-  gap: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #333;
-}
+    .search-results {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: #2b2b2b;
+      width: calc(100% - 32px); /* Matches the width of the search bar minus padding */
+      border-radius: 10px; /* Rounded corners */
+      display: none;
+      flex-direction: column;
+      z-index: 3;
+      padding: 10px;
+      max-height: 250px; /* Shortens the dropdown */
+      overflow-y: auto; /* Adds scroll if too many results */
+    }
 
-.search-result-item:hover {
-  background-color: #333;
-}
+    .search-result-item {
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #333;
+    }
 
-/* Circles Container */
-.circle-container {
-  display: flex;
-  gap: 10px;
-  margin-left: 20px; /* Space between search bar and circles */
-}
+    .search-result-item:hover {
+      background-color: #333;
+    }
 
-/* Individual Circle */
-.circle {
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Dark purple glow */
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white; /* White border around the image */
-}
+    /* Circles Container */
+    .circle-container {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px; /* Space between search bar and circles */
+    }
 
-/* Circle Hover Effect */
-.circle:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 25px rgba(75, 0, 130, 1); /* Brighter dark purple glow on hover */
-}
+    /* Individual Circle */
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Dark purple glow */
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white; /* White border around the image */
+    }
 
-/* Circle Image */
-.circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  transition: filter 0.3s ease-in-out;
-}
+    /* Circle Hover Effect */
+    .circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(75, 0, 130, 1); /* Brighter dark purple glow on hover */
+    }
 
-/* Image hover effects */
-.circle:hover img {
-  filter: brightness(0.7);
-}
+    /* Circle Image */
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: filter 0.3s ease-in-out;
+    }
 
-/* Search Input */
-.search-input {
-  margin-top: 10px;
-  padding: 12px 16px;
-  font-size: 16px;
-  width: 100%; /* Full width */
-  border: none;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  box-sizing: border-box;
-}
+    /* Image hover effects */
+    .circle:hover img {
+      filter: brightness(0.7);
+    }
+
+    /* Search Input */
+    .search-input {
+      margin-top: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      width: 100%; /* Full width */
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      box-sizing: border-box;
+    }
 
     /* Main content styling */
     .main-content {
