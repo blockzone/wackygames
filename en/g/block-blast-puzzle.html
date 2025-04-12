@@ -317,21 +317,29 @@
   transform: scale(1.2);
 }
 
-/* Target the left image in the label-bar */
+/* Targeting the left image specifically within the label-bar */
 .label-bar img.left-icon {
-  height: 50px;  /* Make it bigger */
+  height: 60px; /* Make it bigger */
+  width: 90px;  /* Adjust width to maintain aspect ratio */
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-/* Label Icons Container Styling */
-.label-icons-right {
-  display: flex;
-  gap: 10px;
+.label-bar img.left-icon:hover {
+  transform: scale(1.2);
 }
 
-.label-icon-left {
+/* Other label-bar images */
+.label-bar img {
   height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
+.label-bar img:hover {
+  transform: scale(1.2);
+}
     
   </style>
 </head>
@@ -391,7 +399,7 @@
   <iframe src="https://example.com/your-game"></iframe>
 
 <div class="label-bar">
-  <img class="left-label-img" src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/wackygames_cover.png" alt="Left Icon" />
+<img class="left-icon" src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/wackygames_cover.png" alt="Left Icon" />
   <div class="right-label-icons">
     <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/refresh_icon.png" alt="Right Icon 1" />
     <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/fullscreen_icon.png" alt="Right Icon 2">
