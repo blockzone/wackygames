@@ -303,6 +303,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .label-bar img {
@@ -387,15 +388,54 @@
 </div>
 
   <div class="game-container">
-  <iframe src="https://wackygames.vercel.app/storage/block-blast-puzzle.html"></iframe>
+  <iframe src="https://example.com/your-game"></iframe>
 
-  <div class="label-bar">
+<div class="label-bar">
   <img class="left-label-img" src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/wackygames_cover.png" alt="Left Icon" />
   <div class="right-label-icons">
     <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/refresh_icon.png" alt="Right Icon 1" />
-    <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/fullscreen_icon.png" alt="Right Icon 2" />
+    <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/fullscreen_icon.png" alt="Right Icon 2">
   </div>
 </div>
+
+<script>
+  const fullscreenIcon = document.querySelector('.label-bar img[src*="fullscreen_icon"]');
+  const gameContainer = document.querySelector('.game-container');
+  const labelBar = document.querySelector('.label-bar');
+
+  fullscreenIcon.addEventListener('click', function () {
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      if (gameContainer.requestFullscreen) {
+        gameContainer.requestFullscreen();
+      } else if (gameContainer.mozRequestFullScreen) { // Firefox
+        gameContainer.mozRequestFullScreen();
+      } else if (gameContainer.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        gameContainer.webkitRequestFullscreen();
+      } else if (gameContainer.msRequestFullscreen) { // IE/Edge
+        gameContainer.msRequestFullscreen();
+      }
+
+      // Hide label bar
+      labelBar.style.display = 'none';
+    } else {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+
+      // Show label bar
+      labelBar.style.display = 'flex';
+    }
+  });
+</script>
+
   
     <!-- Particle Container -->
   <div class="particles-container" id="particles-container"></div>
@@ -465,6 +505,6 @@ document.addEventListener('click', function (event) {
 
     setInterval(createParticle, 200);
   </script>
-  
+    
 </body>
 </html>
