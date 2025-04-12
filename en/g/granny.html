@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horror Granny - Wacky Games</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/wackygames_favicon.png">
+  <style>
+
+    body {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+
+    /* Header styling */
+    .header {
+      background-color: #1f1f1f;
+      padding: 0.5rem 2rem;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+.header img {
+  height: 70px;
+  width: auto;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.header img:hover {
+  transform: scale(1.2); /* Zoom in effect */
+}
+
+    /* Sidebar styling */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
+
+    .category-item {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+    }
+
+    .category-icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      object-fit: cover;
+    }
+
+    .sidebar ul {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar ul li img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    .sidebar ul li:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    .search-container {
+      position: absolute;
+      top: 10px;
+      left: 175px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 3;
+    }
+
+    .search-input {
+      margin-top: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      width: 100%; /* Full width of the container */
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      box-sizing: border-box;
+    }
+
+.search-results {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #2b2b2b;
+  width: calc(100% - 32px); /* Matches the width of the search bar minus padding */
+  border-radius: 10px; /* Rounded corners */
+  display: none;
+  flex-direction: column;
+  z-index: 3;
+  padding: 10px;
+  max-height: 250px; /* Shortens the dropdown */
+  overflow-y: auto; /* Adds scroll if too many results */
+}
+
+.search-result-item {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  align-items: center; /* Ensures image and text align vertically */
+}
+
+.search-result-item:hover {
+  background-color: #333;
+}
+
+/* Makes images inside search result items small */
+.search-result-item img {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+    /* Circles Container */
+    .circle-container {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px; /* Space between search bar and circles */
+    }
+
+    /* Individual Circle */
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(75, 0, 130, 0.7); /* Dark purple glow */
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white; /* White border around the image */
+    }
+
+    /* Circle Hover Effect */
+    .circle:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(75, 0, 130, 1); /* Brighter dark purple glow on hover */
+    }
+
+    /* Circle Image */
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: filter 0.3s ease-in-out;
+    }
+
+    /* Image hover effects */
+    .circle:hover img {
+      filter: brightness(0.7);
+    }
+
+    /* Search Input */
+    .search-input {
+      margin-top: 10px;
+      padding: 12px 16px;
+      font-size: 16px;
+      width: 100%; /* Full width */
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    /* Main content styling */
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+    }
+    
+    /* Particle Styles */
+    .particle {
+      position: absolute;
+      bottom: -20px;
+      width: 6px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: rise 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-110vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Adjust particle transparency for variety */
+    .particle:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .particle:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .particles-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+/* Combine both .game-container definitions */
+.game-container {
+  position: relative;
+  width: 800px;              /* wider */
+  height: 490px;             /* taller */
+  margin: 100px auto 0;      /* pushed down with top margin */
+  padding: 0;
+  background-color: #1e1e1e;
+  border: 3px solid white;
+  border-radius: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50px;
+}
+
+.game-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.label-bar {
+  width: 800px; /* Same width as game container */
+  height: 50px;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.label-bar img {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.label-bar img:hover {
+  transform: scale(1.2);
+}
+
+/* Targeting the left image specifically within the label-bar */
+.label-bar img.left-icon {
+  height: 60px; /* Make it bigger */
+  width: 90px;  /* Adjust width to maintain aspect ratio */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.label-bar img.left-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Other label-bar images */
+.label-bar img {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.label-bar img:hover {
+  transform: scale(1.2);
+}
+    
+  </style>
+</head>
+<body>
+<div class="sidebar">
+  <ul>
+    <li><img src="https://example.com/new-icon.png" alt="New"> New</li>
+    <li><img src="https://files.catbox.moe/aaqmh3.png" alt="Popular"> Popular</li>
+    <li><img src="https://files.catbox.moe/eqotzr.png" alt="My Favorites"> My Favorites</li>
+    <hr style="border: 1px solid #333;">
+    <li><img src="https://files.catbox.moe/qg6bou.png" alt="Action"> Action</li>
+    <li><img src="https://files.catbox.moe/lbwo7e.png" alt="Adventure"> Adventure</li>
+    <li><img src="https://files.catbox.moe/whbvbe.png" alt="Puzzle"> Puzzle</li>
+    <li><img src="https://files.catbox.moe/g7dokh.png" alt="Racing"> Racing</li>
+    <li><img src="https://files.catbox.moe/84qgo1.png" alt="Sports"> Sports</li>
+    <li><img src="https://flaticons.net/icon.php?slug_category=miscellaneous&slug_icon=ghost" alt="Simulation"> Horror</li>
+    <li><img src="https://files.catbox.moe/tsyv9c.png" alt="Arcade"> Arcade</li>
+    <li><img src="https://files.catbox.moe/d93u96.png" alt="Multiplayer"> Multiplayer</li>
+  </ul>
+</div>
+  
+  <div class="header">
+    <img src="https://files.catbox.moe/kk436p.png" alt="Wacky Games Logo">
+  </div>
+
+<div class="search-container">
+  <input class="search-input" type="text" id="search-bar" placeholder="Search games...">
+  
+  <!-- Circles Container -->
+  <div class="circle-container">
+    <!-- Circle 1 -->
+    <div class="circle" onclick="window.location.href='/en/a/shein.html'">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdexwddX37tGwJJ2VW_Qkltm_UwvpxQezdMw&s" alt="Shein - Online Shop">
+    </div>
+    <!-- Circle 2 -->
+    <div class="circle" onclick="window.location.href='/en/a/akinator.html'">
+      <img src="https://play-lh.googleusercontent.com/rjX8LZCV-MaY3o927R59GkEwDOIRLGCXFphaOTeFFzNiYY6SQ4a-B_5t7eUPlGANrcw" alt="Akinator">
+    </div>
+    <!-- Circle 3 -->
+    <div class="circle" onclick="window.location.href='/en/a/wsup-ai.html'">
+      <img src="https://cdn-www.bluestacks.com/bs-images/Icon_ai.wsup_1.png" alt="wsup.ai">
+    </div>
+    <!-- Circle 4 -->
+    <div class="circle" onclick="window.location.href='/en/a/temu.html'">
+      <img src="https://aimg.kwcdn.com/upload_aimg/m-img/785681a9-3a72-4e62-90e8-c9b8245739df.jpeg" alt="Temu">
+    </div>
+    <!-- Circle 5 -->
+    <div class="circle" onclick="window.location.href='/en/a/poly-buzz.html'">
+      <img src="https://play-lh.googleusercontent.com/0pUnIxdTlfubi7Qy2ca1kMHCoA2qn6AF4zRRLgna01jPKuVJgwddW8sKpebeKoJkQFM" alt="PolyBuzz.ai">
+    </div>
+  </div>
+
+  <div class="search-results" id="search-results"></div>
+</div>
+
+  <div class="game-container">
+  <iframe src="https://wackygames.vercel.app/storage/granny.html"></iframe>
+
+<div class="label-bar">
+<img class="left-icon" src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/wackygames_cover.png" alt="Left Icon" />
+  <div class="right-label-icons">
+    <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/refresh_icon.png" alt="Right Icon 1" />
+    <img src="https://raw.githubusercontent.com/blockzone/wackygames/main/assets/icons/fullscreen_icon.png" alt="Right Icon 2">
+  </div>
+</div>
+
+    <script>
+  const refreshIcon = document.querySelector('.label-bar img[src*="refresh_icon"]');
+  const iframe = document.querySelector('iframe');
+
+  // Handle the fullscreen button functionality
+  const fullscreenIcon = document.querySelector('.label-bar img[src*="fullscreen_icon"]');
+  const gameContainer = document.querySelector('.game-container');
+  const labelBar = document.querySelector('.label-bar');
+
+  fullscreenIcon.addEventListener('click', function () {
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      if (gameContainer.requestFullscreen) {
+        gameContainer.requestFullscreen();
+      } else if (gameContainer.mozRequestFullScreen) { // Firefox
+        gameContainer.mozRequestFullScreen();
+      } else if (gameContainer.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        gameContainer.webkitRequestFullscreen();
+      } else if (gameContainer.msRequestFullscreen) { // IE/Edge
+        gameContainer.msRequestFullscreen();
+      }
+
+      // Hide label bar
+      labelBar.style.display = 'none';
+    } else {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+      }
+
+      // Show label bar
+      labelBar.style.display = 'flex';
+    }
+  });
+
+  // Handle the refresh button functionality
+  refreshIcon.addEventListener('click', function () {
+    // Reload the iframe by resetting its src attribute
+    const currentSrc = iframe.src;
+    iframe.src = '';  // Temporarily set the src to empty
+    iframe.src = currentSrc;  // Reset the src to the original URL to reload it
+  });
+</script>
+    
+    <!-- Particle Container -->
+  <div class="particles-container" id="particles-container"></div>
+
+  <script>
+const searchBar = document.getElementById('search-bar');
+const searchResults = document.getElementById('search-results');
+
+const games = [
+  { name: 'Block Blast Puzzle', logo: 'https://play-lh.googleusercontent.com/R0qgNDYYHbRhw6JFsdEbDMqONplEvJx0m0W9wzYVvY3eNF1c2rfBWYjQxW0sLEzFe1E=w240-h480-rw', url: '/en/g/block-blast-puzzle.html' },
+  { name: 'Horror Granny', logo: 'https://wallpapersok.com/images/high/granny-scary-face-up-close-0k9r7sfhypjrajj4.jpg', url: '/en/g/granny.html' },
+  { name: 'Glass Bridge Obby', logo: 'https://i.ytimg.com/vi/7I_8zQiwl4A/maxresdefault.jpg', url: '/en/g/glass-bridge-obby.html' },
+  { name: 'Slope', logo: 'https://images.sftcdn.net/images/t_app-cover-l,f_auto/p/14b0224a-b8a8-4e72-b127-9fd1b73e8482/2539008382/slope-unblocked-qpg-screenshot.png', url: '/en/g/slope.html' },
+  { name: 'Rocket League', logo: 'https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2017/08/25/f8052807-f589-4fb5-84d4-b918b03da7fc/rocket-league-octane', url: '/en/g/rocket-league.html' },
+  { name: 'Bubble Shooter', logo: 'https://store-images.s-microsoft.com/image/apps.40207.14592179470849326.32508a85-f3b8-4fe6-8777-c69c6f697155.fb7d307b-35fd-4307-8eba-719cafc3d0ce?q=90&w=480&h=270', url: '/en/g/bubble-shooter.html' },
+];
+
+searchBar.addEventListener('input', function () {
+  const query = searchBar.value.toLowerCase();
+  const filteredGames = games.filter(game => game.name.toLowerCase().includes(query));
+
+  searchResults.innerHTML = '';
+
+  filteredGames.forEach(game => {
+    const resultItem = document.createElement('div');
+    resultItem.classList.add('search-result-item');
+    resultItem.innerHTML = `
+      <img src="${game.logo}" alt="${game.name}">
+      <div>${game.name}</div>
+    `;
+    
+    // Add click listener to navigate to the game's URL
+    resultItem.addEventListener('click', () => {
+      window.location.href = game.url;
+    });
+
+    searchResults.appendChild(resultItem);
+  });
+
+  searchResults.style.display = filteredGames.length > 0 ? 'block' : 'none';
+});
+
+// Close the dropdown when clicking outside the search bar
+document.addEventListener('click', function (event) {
+  if (!searchBar.contains(event.target) && !searchResults.contains(event.target)) {
+    searchResults.style.display = 'none';
+  }
+});
+  </script>
+
+    <script>
+    const container = document.getElementById("particles-container");
+
+    function createParticle() {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.width = Math.random() * 4 + 4 + "px";
+      particle.style.height = particle.style.width;
+      particle.style.animationDuration = (Math.random() * 4 + 6) + "s";
+      container.appendChild(particle);
+
+      setTimeout(() => {
+        particle.remove();
+      }, 8000);
+    }
+
+    setInterval(createParticle, 200);
+  </script>
+    
+</body>
+</html>
