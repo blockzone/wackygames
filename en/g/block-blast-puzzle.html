@@ -398,7 +398,11 @@
   </div>
 </div>
 
-<script>
+    <script>
+  const refreshIcon = document.querySelector('.label-bar img[src*="refresh_icon"]');
+  const iframe = document.querySelector('iframe');
+
+  // Handle the fullscreen button functionality
   const fullscreenIcon = document.querySelector('.label-bar img[src*="fullscreen_icon"]');
   const gameContainer = document.querySelector('.game-container');
   const labelBar = document.querySelector('.label-bar');
@@ -434,9 +438,16 @@
       labelBar.style.display = 'flex';
     }
   });
-</script>
 
-  
+  // Handle the refresh button functionality
+  refreshIcon.addEventListener('click', function () {
+    // Reload the iframe by resetting its src attribute
+    const currentSrc = iframe.src;
+    iframe.src = '';  // Temporarily set the src to empty
+    iframe.src = currentSrc;  // Reset the src to the original URL to reload it
+  });
+</script>
+    
     <!-- Particle Container -->
   <div class="particles-container" id="particles-container"></div>
 
